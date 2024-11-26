@@ -1,0 +1,37 @@
+/******************************************************************************
+Exercício 14: Escreva um programa em C que faz o seguinte:
+Crie um vetor de 10 posições, preencha cada posição com o valores de 1 até 10.
+Some todos os elementos do vetor e armazene o resultado em uma variável.
+Escreva uma função chamada calcularResultado que recebe três parâmetros inteiros: a soma dos
+elementos do vetor, o primeiro valor do vetor, e o último valor do vetor.A função deve retornar 
+a seguinte expressão: resultado = soma + (primeiroValor * 5) + (ultimoValor * 2).
+No main, imprima o resultado dessa função.
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Função que calcula o resultado com base na soma, 1ª e último valor
+int calcularResultado(int soma, int primeiroValor, int ultimoValor) {
+    int resultado = soma + (primeiroValor * 5) + (ultimoValor * 2);     
+    return resultado;
+}
+
+int main() {
+    int vetor[10]; 
+    int soma = 0;   
+
+    for (int i = 0; i < 10; i++) { 
+        vetor[i] = i + 1;  // Atribui ao vetor[i] o valor i+1 
+        soma += vetor[i];  // Adiciona o valor de vetor[i] à variável soma
+    }
+
+    // Chama a função 'calcularResultado'
+    // o 1ª valor do vetor = vetor[0] e o último valor do vetor = vetor[9]
+    int resultado = calcularResultado(soma, vetor[0], vetor[9]);
+
+    printf("O resultado é: %d\n", resultado);
+
+    return 0;  
+}
+

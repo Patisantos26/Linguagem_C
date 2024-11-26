@@ -1,0 +1,37 @@
+/******************************************************************************
+Exercício 4: Faça um programa em C que solicita três números inteiros do usuário, armazenar em um vetor, exibir a soma dos valores do vetor. 
+O programa deve chamar uma função para calcular a soma dos valores e retornar este valor. Não se esqueça de declarar no início do programa o 
+protótipo da(s) função(ões).
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h> 
+
+// Declaração da função 'soma' que recebe um array de números inteiros e o tamanho do array, e retorna a soma desses números.
+int soma(int numeros[], int tamanho);
+
+int main() {
+    int numeros[3];  
+
+    for (int i = 0; i < 3; i++) {
+        printf("Digite o %dº número: ", i + 1);  // Solicita o número de acordo com o índice (i + 1) para exibir a ordem correta (1º, 2º, 3º).
+        scanf("%d", &numeros[i]);  // Lê o número digitado pelo usuário e o armazena no array 'numeros' na posição 'i'.
+    }
+
+    // Chama a função soma para calcular a soma dos números no array 'numeros'. O tamanho do array é 3.
+    int resultado = soma(numeros, 3);
+
+    printf("A soma dos valores é: %d\n", resultado);
+    return 0;  
+}
+
+// Função que recebe um array de inteiros e o tamanho do array, e retorna a soma de todos os elementos do array.
+int soma(int numeros[], int tamanho) {
+    int soma = 0; 
+
+    for (int i = 0; i < tamanho; i++) {
+        soma += numeros[i];  // Soma o valor de cada elemento do array à variável 'soma'.
+    }
+
+    return soma;  // Retorna a soma total dos números no array.
+}

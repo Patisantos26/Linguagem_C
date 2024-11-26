@@ -1,0 +1,44 @@
+/******************************************************************************
+Exercício 9: Escreva um algoritmo em C que cria um vetor com valores digitados pelo usuário, 
+faça uma função para multiplicar os valores do vetor e imprime o resultado da multiplicação.
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Função para multiplicar os valores de um vetor e retornar o produto final
+float multiplicarValores(int vetor[], int tamanho) {
+    float resultado = 1.0;  
+    
+    for (int i = 0; i < tamanho; i++) {
+        resultado *= vetor[i];  // Multiplica o valor de 'resultado' pelo elemento do vetor
+    }
+    return resultado;  // Retorna o produto final de todos os elementos multiplicados
+}
+
+int main() {
+    int n;
+
+    printf("Digite o número de elementos do vetor: ");
+    scanf("%d", &n);  
+
+    // Verifica se o número de elementos é maior que zero
+    if (n <= 0) {
+        printf("O número de elementos deve ser maior que 0.\n");
+        return 1;  // Se o número for inválido, encerra o programa com erro
+    }
+
+    int vetor[n];  // Declara o vetor com tamanho definido pela variável 'n'
+
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);  
+        scanf("%d", &vetor[i]);  
+    }
+
+    // Chama a função 'multiplicarValores' passando o vetor e o seu tamanho para obter o produto
+    float produto = multiplicarValores(vetor, n);  
+
+    printf("O resultado da multiplicação dos valores é: %.2f\n", produto);
+
+    return 0;  
+}

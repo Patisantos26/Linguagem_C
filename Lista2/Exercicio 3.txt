@@ -1,0 +1,33 @@
+/******************************************************************************
+Exercício 3: Faça um programa em C que solicita dois números inteiros do usuário, calcula a soma desses números e exibe o resultado. 
+O programa deve chamar uma função para calcular a soma de dois números inteiros e retornar este valor. Não se esqueça de declarar no 
+início do programa o protótipo da(s) função(ões).
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h> 
+
+int soma(int a, int b);
+
+int main() {
+    int num1, num2, resultado;  
+    
+    // Solicita ao usuário que digite o primeiro número 
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);  
+    
+    // Solicita ao usuário que digite o segundo número 
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    resultado = soma(num1, num2);
+
+    printf("A soma de %d e %d é: %d\n", num1, num2, resultado);
+
+    return 0;  
+}
+
+// Função que recebe dois números inteiros 'a' e 'b' e retorna a soma desses números.
+int soma(int a, int b) {
+    return a + b;  // Realiza a soma dos dois números e retorna o resultado.
+}

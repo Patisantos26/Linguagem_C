@@ -1,0 +1,31 @@
+/******************************************************************************
+Exercício 8: Escreva um algoritmo em C que utiliza uma função para exibir todos os números pares de 1 até um número fornecido pelo usuário. 
+A função deve ter a seguinte assinatura: void exibirPares(int numero);
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Função que exibe números 
+void exibirPares(int num) { 
+    printf("Números pares de 1 até %d:\n", num);
+
+    // Loop que inicia no número 2 e vai até o número informado pelo usuário (num), com incremento de 2 para exibir apenas os pares
+    for (int i = 2; i <= num; i += 2) {   
+        printf("%d ", i); 
+    }
+
+    printf("\n");  // Quebra de linha para melhorar a formatação
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um número: ");
+    scanf("%d", &numero);  
+    
+    // Chama a função exibirPares, passando o número inserido para exibir os pares até esse número
+    exibirPares(numero);
+
+    return 0; 
+}

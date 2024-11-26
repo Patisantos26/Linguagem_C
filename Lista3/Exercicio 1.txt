@@ -1,0 +1,42 @@
+/******************************************************************************
+Exercício 1: Analise o código de programa abaixo, execute em seu computador e comente cada linha, explicando o código. 
+Além disso, refaça o código, criando uma função que permite ao usuário digitar todos os dados do vetor pessoas[].
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Definição de uma estrutura 'Pessoa', que contém dois campos: nome e idade
+struct Pessoa {
+    char nome[50];  // Array para armazenar o nome da pessoa 
+    int idade;  // Inteiro para armazenar a idade da pessoa
+};
+
+// Função que preenche os dados de um vetor de pessoas (nome e idade)
+void inserirPessoas(struct Pessoa pessoas[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        printf("Digite o nome da pessoa %d: ", i + 1);  
+        scanf("%s", pessoas[i].nome);  
+        
+        printf("Digite a idade da pessoa %d: ", i + 1);  
+        scanf("%d", &pessoas[i].idade);  
+    }
+}
+
+int main() {
+    int n;  // Variável para armazenar as pessoas que o usuário deseja cadastrar.
+
+    printf("Quantas pessoas deseja cadastrar? ");
+    scanf("%d", &n);  
+
+    struct Pessoa pessoas[n];  // Cria um vetor de 'Pessoa' com 'n' elementos.
+
+    inserirPessoas(pessoas, n);  // Chama a função 'inserirPessoas' para preencher o vetor de pessoas
+
+    printf("\nDados cadastrados:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Pessoa %d: Nome = %s, Idade = %d\n", i + 1, pessoas[i].nome, pessoas[i].idade);
+    }
+
+    return 0;  
+}

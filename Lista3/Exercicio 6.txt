@@ -1,0 +1,42 @@
+/******************************************************************************
+Exercício 6: Crie um vetor em C com valores digitados pelo usuário, crie uma (função para somar os valores), 
+calcule a média dos valores e imprima o resultado da soma e a média no console.
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Função para somar os valores de um vetor.
+float somar_valores(int vetor[], int tamanho) { 
+    float soma = 0.0;  // Inicializa a variável soma com 0.
+
+    for (int i = 0; i < tamanho; i++) {  
+        soma += vetor[i];  // Adiciona o valor do vetor[i] à variável 'soma'.
+    }
+
+    return soma;  // Retorna o valor final da soma.
+}
+
+int main() {
+    int n;  
+    
+    printf("Digite o nº de elementos do vetor: ");
+    scanf("%d", &n);  
+
+    int vetor[n];  // Declara um vetor de tamanho 'n' (dado fornecido pelo usuário) 
+
+    for (int i = 0; i < n; i++) { 
+        printf("Digite o valor %d: ", i + 1);  
+        scanf("%d", &vetor[i]);  
+    }
+
+    // Chama a função 'somar_valores' para calcular a soma dos valores no vetor.
+    float soma = somar_valores(vetor, n);  
+
+    float media = soma / n;  // Calcula a média dividindo a soma dos valores pelo número de elementos.
+
+    printf("Soma dos valores: %.2f\n", soma);
+    printf("Média dos valores: %.2f\n", media);
+
+    return 0; 
+}

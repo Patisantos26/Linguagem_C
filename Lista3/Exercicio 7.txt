@@ -1,0 +1,45 @@
+/******************************************************************************
+Exercício 7: Crie um vetor em C com valores digitados pelo usuário, crie uma função para encontrar o maior valor, 
+imprima no console o maior valor e sua posição no vetor (suponha que não há números repetidos no vetor).
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h>  
+
+// Função para encontrar o maior valor e sua posição no vetor
+void encontrarMaiorValor(int vetor[], int tamanho, int *maior_valor, int *posicao) {
+
+    *maior_valor = vetor[0];  // O primeiro elemento do vetor é o maior inicial
+    *posicao = 0;  // A posição do maior valor começa como 0 
+
+    for (int i = 1; i < tamanho; i++) {
+        if (vetor[i] > *maior_valor) {
+            *maior_valor = vetor[i];  // Atualiza o maior valor
+            *posicao = i;  // Atualiza a posição do maior valor
+        }
+    }
+}
+
+int main() {
+    int n;  
+
+    printf("Digite o número de elementos do vetor: ");
+    scanf("%d", &n); 
+
+    int vetor[n];  // Declara o vetor com 'n' elementos 
+
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);  
+        scanf("%d", &vetor[i]); 
+    }
+
+    int maior_valor, posicao;  // Variáveis para armazenar o maior valor e sua posição
+
+    // Chama a função para encontrar o maior valor e sua posição no vetor
+    encontrarMaiorValor(vetor, n, &maior_valor, &posicao);
+
+    printf("O maior valor é: %d\n", maior_valor); 
+    printf("Sua posição no vetor é: %d\n", posicao);  
+
+    return 0; 
+}

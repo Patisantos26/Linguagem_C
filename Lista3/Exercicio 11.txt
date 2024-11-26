@@ -1,0 +1,42 @@
+/******************************************************************************
+Exercício 11: Escreva um algoritmo em C que receba três números inteiros e exiba o menor deles. 
+O programa deve solicitar os valores ao usuário e utilizar uma função para retornar o menor valor com a 
+seguinte assinatura: int menorNumero(int num1, int num2, int num3);
+******************************************************************************/
+// Patrícia Nascimento Santos
+
+#include <stdio.h> 
+
+// Função para encontrar o menor número entre três valores
+int menorNumero(int num1, int num2, int num3) {
+    
+    int menor = num1;  // Inicia com o valor do 1ª número
+    if (num2 < menor) {  // Compara o 2ª número
+        menor = num2;  // Se o segundo número for menor, "fica" o valor de num2
+    }
+    if (num3 < menor) {  // Compara o 3ª número com o valor do "menor"
+        menor = num3;  // Se o 3ª número for menor, fica como "menor" com o valor de num3
+    }
+    
+    return menor;
+}
+
+int main() {
+    int numero1, numero2, numero3;  // Declara três variáveis 
+
+    printf("Digite o primeiro número: ");
+    scanf("%d", &numero1);  
+
+    printf("Digite o segundo número: ");
+    scanf("%d", &numero2);  
+
+    printf("Digite o terceiro número: ");
+    scanf("%d", &numero3);  
+
+    // Chama a função 'menorNumero' passando os três números para encontrar o menor entre eles
+    int menor = menorNumero(numero1, numero2, numero3);  
+    
+    printf("O menor número é: %d\n", menor); 
+
+    return 0;  
+}
